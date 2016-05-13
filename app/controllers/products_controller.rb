@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(
+    @book =  Product.create(
       title: params[:title],
       author: params[:author],
       genre: params[:genre],
@@ -24,5 +24,13 @@ class ProductsController < ApplicationController
     )
 
     render 'show.html.erb'
+  end
+
+  def edit
+    @book = Recipe.find(params[:id])
+  end
+
+  def update
+    
   end
 end
