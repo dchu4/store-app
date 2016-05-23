@@ -1,1 +1,49 @@
-edit.html.erb
+<h1>Update a book:</h1>
+
+<%= form_tag "/books/#{ @book.id }", method: :patch do %>
+  <div>
+    <%= label_tag :title %>
+    <%= text_field_tag :title, @book.title%>
+  </div>
+  <div>
+    <%= label_tag :author %>
+    <%= text_field_tag :author, @book.author %>
+  </div>
+  <div>
+    <%= label_tag :genre %>
+    <%= text_field_tag :genre, @book.genre %>
+  </div>
+  <div>
+    <%= label_tag :synopsis %>
+    <%= text_field_tag :synopsis, @book.synopsis %>
+  </div>
+  <div>
+    <%= label_tag :image %>
+    <%= text_field_tag :image, @book.image %>
+  </div>
+  <div>
+    <%= label_tag :price %>
+    <%= text_field_tag :price, @book.price %>
+  </div>
+  <div>
+    <%= label_tag :quantity %>
+    <%= text_field_tag :quantity, @book.quantity %>
+  </div>
+  <div>
+    <%= label_tag :rating %>
+    <%= text_field_tag :rating, @book.rating %>
+  </div>
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, @book.description %>
+  </div>
+  <div>
+    <%= label_tag :available %>
+    <%= text_field_tag :available, @book.available %>
+  </div>
+  <div>
+    <%= label_tag :supplier_id %>
+    <%= text_field_tag :supplier_id, @book.supplier_id %>
+  </div>
+  <%= submit_tag 'Edit Book' %>
+<% end %>

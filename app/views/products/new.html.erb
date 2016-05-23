@@ -1,3 +1,5 @@
+<h1>Add a new book:</h1>
+
 <%= form_tag '/books', method: :post do %>
   <div>
     <%= label_tag :title %>
@@ -31,6 +33,17 @@
     <%= label_tag :rating %>
     <%= text_field_tag :rating %>
   </div>
-
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, @book.description %>
+  </div>
+  <div>
+    <%= label_tag :available %>
+    <%= text_field_tag :available, @book.available %>
+  </div>
+  <div>
+    <%= label_tag :supplier_id %>
+    <%= text_field_tag :supplier_id, @book.supplier_id %>
+  </div>
   <%= submit_tag 'Make Book' %>
 <% end %>

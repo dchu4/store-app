@@ -1,15 +1,23 @@
 <h1>Book Store</h1>
 
-<% @books.each do |book| %>
+<div class="row">
 
-<h3><%= book.title %></h3>
-<h3><%= book.author %></h3>
-<h3><%= book.genre %></h3>
-<h3><%= book.synopsis %></h3>
-<h3><%= book.image %></h3>
-<h3><%= book.price %></h3>
-<h3><%= book.quantity %></h3>
-<h3><%= book.rating %></h3>
-<br>
+  <% @books.each do |book| %>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <h3><%= link_to book.title, "/books/#{book.id}" %></h3>
+        <h4>Author: <%= book.author %></h4>
+        <h4>Genre: <%= book.genre %></h4>
+        <h4>Price: <%= book.price %></h4>
+        <h4>Stock: <%= book.quantity %></h4>
+        <h4>Rating: <%= book.rating %></h4>
+        <a href="/books/<%= book.id %>"><%= image_tag book.image %></a>
 
-<% end %>
+        <br>
+        <%= link_to 'Edit', "/books/#{book.id}/edit" %>
+        <br>
+      </div>
+    </div>
+  <% end %>
+
+</div>

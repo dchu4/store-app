@@ -1,10 +1,26 @@
-<h1>Book Store</h1>
+<h1><%= @book.title %></h1>
 
-<h3><%= @book.title %></h3>
-<h3><%= @book.author %></h3>
-<h3><%= @book.genre %></h3>
-<h3><%= @book.synopsis %></h3>
-<h3><%= @book.image %></h3>
-<h3><%= @book.price %></h3>
-<h3><%= @book.quantity %></h3>
-<h3><%= @book.rating %></h3>
+<div class="col-md-12">
+  <div class="col-md-4">
+    <h3>Author: <%= @book.author %></h3>
+    <h3>Genre: <%= @book.genre %></h3>
+    <h3>Description: <%= @book.description %></h3>
+    <h3><%= @book.synopsis %></h3>
+    <h3>Price: <%= @book.price %></h3>
+    <h3>Stock: <%= @book.quantity %></h3>
+    <h3>Rating: <%= @book.rating %></h3>
+    <h3>Tax: <%= number_to_currency(@book.tax) %></h3>
+    <h3>Sale Message: <%= @book.sale_message %></h3>
+    <h3>Total: <%= number_to_currency(@book.total) %></h3>
+
+    <%= link_to 'Edit', "/books/#{@book.id}/edit" %>
+
+    <br>
+
+    <%= link_to 'Delete', "/books/#{@book.id}", method: :delete %>
+  </div>
+
+  <div class="col-md-4">
+    <%= image_tag @book.image %>
+  </div>
+</div>
