@@ -11,7 +11,6 @@
         <h4>Price: <%= book.price %></h4>
         <h4>Stock: <%= book.quantity %></h4>
         <h4>Rating: <%= book.rating %></h4>
-        <a href="/books/<%= book.id %>"><%= image_tag book.image %></a>
 
         <br>
         <%= link_to 'Edit', "/books/#{book.id}/edit" %>

@@ -1,12 +1,19 @@
+# Product model and model methods
 class Product < ActiveRecord::Base
+  belongs_to :supplier
+  has_many :images
+  has_many :orders
+  has_many :categorized_products
+  has_many :categories, through: :categorized_products
+
   TAXRATE = 0.09
 
   def sale_message
     if price < 20
-      "Discounted"
+      'Discounted'
     else
-      "Everyday low prices"
-    end    
+      'Everyday low prices'
+    end
   end
 
   def tax
@@ -15,5 +22,9 @@ class Product < ActiveRecord::Base
 
   def total
     price + tax
-  end  
+  end
+
+  def image_preview
+    images.first.url
+  end
 end

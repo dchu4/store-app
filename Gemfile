@@ -9,6 +9,7 @@ gem 'pg', '~> 0.15'
 
 gem 'seed_dump', '~> 3.2', '>= 3.2.4'
 
+gem 'devise'
 
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'

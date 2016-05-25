@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get '/' => 'products#index'
+  devise_for :users
+  root to: 'products#index'
   get '/books' => 'products#index'
 
   get 'books/random' => 'products#random'
@@ -24,4 +25,7 @@ Rails.application.routes.draw do
   patch '/suppliers/:id' => 'suppliers#update'
 
   delete '/suppliers/:id' => 'suppliers#destroy'
+
+  post '/orders' => 'orders#create'
+  get '/orders/:id' => 'orders#show'
 end

@@ -20,7 +20,19 @@
     <%= link_to 'Delete', "/books/#{@book.id}", method: :delete %>
   </div>
 
+  <%= form_tag '/orders', method: :post %>
+    <div>
+      <%= label_tag :quantity %>
+      <%= text_field_tag :quantity %>
+    </div>
+    <div>
+      <%= label_tag :product_id %>
+      <%= text_field_tag :product_id %>
+    </div>
+
+  <% end %>
+
   <div class="col-md-4">
-    <%= image_tag @book.image %>
+    <p> image_tag @book.image </p>
   </div>
 </div>
