@@ -33,7 +33,7 @@
 # Category.create(genre: "Diaries")
 
 
-CategorizedProduct.create(product_id: 1, category_id: 1)
-CategorizedProduct.create(product_id: 1, category_id: 3)
-CategorizedProduct.create(product_id: 1, category_id: 4)
-CategorizedProduct.create(product_id: 1, category_id: 5)
+CategorizedProduct.create(product_id: 11, category_id: 1)
+CategorizedProduct.create(product_id: 11, category_id: 3)
+CategorizedProduct.create(product_id: 11, category_id: 4)
+CategorizedProduct.create(product_id: 11, category_id: 5)

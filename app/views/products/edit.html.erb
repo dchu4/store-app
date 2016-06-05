@@ -1,3 +1,7 @@
+<% @book.errors.full_messages.each do |error| %>
+  <h3><%= error %></h3>
+<% end %>
+
 <h1>Update a book:</h1>
 
 <%= form_tag "/books/#{ @book.id }", method: :patch do %>
