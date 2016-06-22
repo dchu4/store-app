@@ -2,6 +2,9 @@ class ProductsController < ApplicationController
   before_action :admin_authentication, only: [:new, :edit, :update, :create, :destroy]
 
   def index
+    @test_token = ENV[:test_api_token]
+    @test_secret = ENV[:test_api_secret]
+
     sort_by_attr = params[:sort]
     sort_order = params[:sort_order]
     discount_price = params[:discount_price]
